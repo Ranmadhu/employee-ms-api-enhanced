@@ -5,7 +5,6 @@ import com.example.employeemsapi.exception.EmployeeException;
 import com.example.employeemsapi.service.EmployeeService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -31,10 +30,8 @@ public class EmployeeController {
     }
 
     @GetMapping()
-    public ResponseEntity<Employee> getAllEmployees() throws EmployeeException{
-        List<Employee> response = null;
-        response = employeeService.getAllEmployees();
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<List<Employee>> getAllEmployees() throws EmployeeException{
+        return new ResponseEntity<List<Employee>>(employeeService.getAllEmployees(), HttpStatus.OK);
     }
 
     @GetMapping("/{employeeId}")

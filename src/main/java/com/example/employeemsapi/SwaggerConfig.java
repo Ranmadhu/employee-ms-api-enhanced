@@ -23,7 +23,7 @@ public class SwaggerConfig {
                 .build().apiInfo(getApiInfo());
     }
 
-    private ApiInfo getApiInfo() {
+    public ApiInfo getApiInfo() {
         return new ApiInfoBuilder().title("Employee Management REST API")
                 .description("This is an assignment for demonstrate the CRUD operations of a Spring Boot based REST API.")
                 .version("1.0.0")
