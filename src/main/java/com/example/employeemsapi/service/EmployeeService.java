@@ -14,7 +14,7 @@ public interface EmployeeService {
 
     public List<Employee> getAllEmployees();
 
-    public Employee getSingleEmployee(int employeeId) throws EmployeeException;
+    public Employee getEmployeeById(int employeeId) throws EmployeeException;
 
     public List<Employee> getEmployeesByFirstName(String firstName) throws EmployeeException;
 

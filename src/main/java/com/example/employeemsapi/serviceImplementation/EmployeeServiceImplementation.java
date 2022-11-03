@@ -31,7 +31,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
     }
 
     @Override
-    public Employee getSingleEmployee(int employeeId) throws EmployeeException {
+    public Employee getEmployeeById(int employeeId) throws EmployeeException {
         Optional<Employee> employee = employeeRepository.findById(employeeId);
         if (employee.isPresent()) {
             return employee.get();
