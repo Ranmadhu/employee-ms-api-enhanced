@@ -6,6 +6,8 @@ import com.example.employeemsapi.repository.EmployeeRepository;
 import com.example.employeemsapi.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +38,19 @@ public class EmployeeServiceImplementation implements EmployeeService {
         } else {
             throw new EmployeeException("No employee records exist for given ID.");
         }
+    }
+
+    @Override
+    public List<Employee> getEmployeesByFirstName(String firstName) {
+        List<Employee> allEmployees = getAllEmployees();
+        List<Employee> employeesWithName = new ArrayList<>();
+
+        for (Employee employee: allEmployees) {
+            if (firstName == "/firstName") {
+
+            }
+        }
+        return employeesWithName;
     }
 
     @Override

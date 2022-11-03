@@ -39,6 +39,11 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employeeService.getSingleEmployee(employeeId), HttpStatus.OK);
     }
 
+    @GetMapping("/{firstName}")
+    public ResponseEntity<List<Employee>> getEmployeesByFirstName(@PathVariable String firstName) throws EmployeeException {
+        return new ResponseEntity<List<Employee>>(employeeService.getEmployeesByFirstName(firstName), HttpStatus.OK);
+    }
+
     @PutMapping("/{employeeId}")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employees) {
         return new ResponseEntity<Employee>(employeeService.updateEmployee(employees), HttpStatus.OK);

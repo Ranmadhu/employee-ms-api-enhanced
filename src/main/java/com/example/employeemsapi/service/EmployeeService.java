@@ -16,6 +16,8 @@ public interface EmployeeService {
 
     public Employee getSingleEmployee(int employeeId) throws EmployeeException;
 
+    public List<Employee> getEmployeesByFirstName(String firstName) throws EmployeeException;
+
     public Employee updateEmployee(Employee employees);
 
     public void deleteEmployee(int employeeId) throws EmployeeException;
