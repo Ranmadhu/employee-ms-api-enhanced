@@ -18,6 +18,10 @@ public interface EmployeeService {
 
     public List<Employee> getEmployeesByFirstName(String firstName) throws EmployeeException;
 
+    public List<Employee> getEmployeesByLastName(String lastName) throws EmployeeException;
+
+    public List<Employee> getEmployeesByAge(int age) throws EmployeeException;
+
     public Employee updateEmployee(Employee employees);
 
     public void deleteEmployee(int employeeId) throws EmployeeException;

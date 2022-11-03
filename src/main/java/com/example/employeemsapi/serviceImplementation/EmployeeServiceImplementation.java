@@ -41,12 +41,38 @@ public class EmployeeServiceImplementation implements EmployeeService {
     }
 
     @Override
-    public List<Employee> getEmployeesByFirstName(String firstName) {
+    public List<Employee> getEmployeesByFirstName(String firstName) throws EmployeeException {
         List<Employee> allEmployees = getAllEmployees();
         List<Employee> employeesWithName = new ArrayList<>();
 
         for (Employee employee: allEmployees) {
             if (firstName.equals(employee.getFirstName())) {
+                employeesWithName.add(employee);
+            }
+        }
+        return employeesWithName;
+    }
+
+    @Override
+    public List<Employee> getEmployeesByLastName(String lastName) throws EmployeeException {
+        List<Employee> allEmployees = getAllEmployees();
+        List<Employee> employeesWithName = new ArrayList<>();
+
+        for (Employee employee: allEmployees) {
+            if (lastName.equals(employee.getLastName())) {
+                employeesWithName.add(employee);
+            }
+        }
+        return employeesWithName;
+    }
+
+    @Override
+    public List<Employee> getEmployeesByAge(int age) throws EmployeeException {
+        List<Employee> allEmployees = getAllEmployees();
+        List<Employee> employeesWithName = new ArrayList<>();
+
+        for (Employee employee: allEmployees) {
+            if (age == employee.getAge()) {
                 employeesWithName.add(employee);
             }
         }

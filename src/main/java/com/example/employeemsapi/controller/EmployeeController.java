@@ -44,6 +44,16 @@ public class EmployeeController {
         return new ResponseEntity<List<Employee>>(employeeService.getEmployeesByFirstName(firstName), HttpStatus.OK);
     }
 
+    @GetMapping("/{lastName}")
+    public ResponseEntity<List<Employee>> getEmployeesByLastName(@PathVariable String lastName) throws EmployeeException {
+        return new ResponseEntity<List<Employee>>(employeeService.getEmployeesByLastName(lastName), HttpStatus.OK);
+    }
+
+    @GetMapping("/{age}")
+    public ResponseEntity<List<Employee>> getEmployeesByAge(@PathVariable int age) throws EmployeeException {
+        return new ResponseEntity<List<Employee>>(employeeService.getEmployeesByAge(age), HttpStatus.OK);
+    }
+
     @PutMapping("/{employeeId}")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employees) {
         return new ResponseEntity<Employee>(employeeService.updateEmployee(employees), HttpStatus.OK);
