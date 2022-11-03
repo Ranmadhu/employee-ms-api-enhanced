@@ -46,8 +46,8 @@ public class EmployeeServiceImplementation implements EmployeeService {
         List<Employee> employeesWithName = new ArrayList<>();
 
         for (Employee employee: allEmployees) {
-            if (firstName == "/firstName") {
-
+            if (firstName.equals(employee.getFirstName())) {
+                employeesWithName.add(employee);
             }
         }
         return employeesWithName;
